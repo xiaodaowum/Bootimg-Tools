@@ -87,7 +87,7 @@ my $d_offset = $s_offset + ($o * $PAGE_SIZE);
 my $k_file = $base . "-kernel";
 my $r_file = $base . "-ramdisk.gz";
 my $s_file = $base . "-second.gz";
-my $d_file = $base . "-dtb";
+my $d_file = "dt.img";
 
 # The kernel is always there
 print "Writing $k_file ...";
@@ -105,12 +105,10 @@ unless ($SECOND_SIZE == 0) {
     &dump_file($IMAGE_FN, $s_file, $s_offset, $SECOND_SIZE);
     print " complete.\n";
 }
-# The dtb file is optional
-unless ($DTB_SIZE == 0) {
+# The dtb file is always there
     print "Writing $s_file ...";
     &dump_file($IMAGE_FN, $d_file, $d_offset, $DTB_SIZE);
     print " complete.\n";
-}
  
 ######################################################################
 ## Supporting Subroutines

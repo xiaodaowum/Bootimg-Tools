@@ -84,7 +84,7 @@ my $s_offset = $r_offset + ($m * $PAGE_SIZE);
 my $d_offset = $s_offset + ($o * $PAGE_SIZE);
 
 (my $base = $IMAGE_FN) =~ s/.*\/(.*)$/$1/;
-my $k_file = $base . "-kernel";
+my $k_file = "zImage";
 my $r_file = $base . "-ramdisk.gz";
 my $s_file = $base . "-second.gz";
 my $d_file = "dt.img";

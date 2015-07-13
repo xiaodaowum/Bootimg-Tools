@@ -1,0 +1,15 @@
+#!/bin/bash          
+
+./mkbootimg --base 0x00000000 --kernel zImage --ramdisk_offset 0x02000000 --tags_offset 0x00000100 --pagesize 2048 --cmdline "console=ttyHSL0,115200,n8 user_debug=31 ehci-hcd.park=3 msm_rtb.filter=0x37 androidboot.hardware=g3 androidboot.selinux=permissive" --ramdisk boot.img-ramdisk.gz --dt dt.img -o boot.img
+
+#Page size: 2048 (0x00000800)
+#Kernel tags address: 31457280 (0x01e00000)
+#Kernel size: 6487960 (0x0062ff98)
+#Kernel address: 32768 (0x00008000)
+#Ramdisk size: 1143614 (0x0011733e)
+#Ramdisk address: 33554432 (0x02000000)
+#Second size: 0 (0x00000000)
+#Second address: 15728640 (0x00f00000)
+#dtb size: 5652480 (0x00564000)
+#dtb address: 0 (0x00000000)
+

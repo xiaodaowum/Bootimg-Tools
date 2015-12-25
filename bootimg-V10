@@ -1,0 +1,5 @@
+#!/bin/bash          
+
+./mkbootimg --base 0x00000000 --kernel Image --ramdisk_offset 0x02200000 --tags_offset 0x00000100 --pagesize 4096 --cmdline "console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.hardware=pplus" --ramdisk boot.img-ramdisk.gz --dt dt.img -o boot.img
+
+
